@@ -1,0 +1,509 @@
+### Pagination for GET endpoints
+GET http://localhost:8080/api/certificates?page=0&size=10&sort=name,asc
+
+### Get certificates with page, size, sorting, and name query parameter:
+GET http://localhost:8080/api/certificates?page=0&size=25&sort=name
+
+### Get information about user's order: cost and timestamp of a purchase:
+GET http://localhost:8080/api/users/{userId}/orders/{orderId}
+
+### Get the most widely used tag of a user with the highest cost of all orders:
+GET http://localhost:8080/api/users/{userId}/tags/highest-cost
+
+### Get certificates with pagination and sorting by name
+GET http://localhost:8080/api/certificates?page=0&size=25&sort=name
+
+### Change a single field of a gift certificate (e.g., duration)
+PATCH http://localhost:8080/api/certificates/{certificateId}
+
+Body:
+{
+
+"duration": 30
+
+}
+
+### Add a new User entity
+POST http://localhost:8080/api/users
+
+Body:
+
+{
+"username": "john_doe",
+"email": "john.doe@example.com",
+"password": "password123"
+}
+
+### Get information about a specific User
+GET http://localhost:8080/api/users/{userId}
+
+### Make an order on a gift certificate for a User
+POST http://localhost:8080/api/users/{userId}/orders
+
+Body:
+
+{
+
+"duration": 30
+
+}
+
+### Get information about a User's orders
+GET http://localhost:8080/api/users/{userId}/orders
+
+### Get certificates with page, size, sort, and name
+GET http://localhost:8080/api/certificates?page=0&size=25&sort=namez`1
+
+### Change single field of a gift certificate
+PATCH http://localhost:8080/api/certificates/{certificateId}
+Content-Type: application/json
+
+{
+  "duration": 5
+}
+
+### Add new entity User (GET operations only)
+GET http://localhost:8080/api/users/{userId}
+
+### Make an order on a gift certificate for a user
+POST http://localhost:8080/api/users/{userId}/orders
+Content-Type: application/json
+
+{
+  "certificateId": "{certificateId}",
+  "quantity": 1
+}
+
+### Get information about user's orders
+GET http://localhost:8080/api/users/{userId}/orders
+
+### Get information about user's order: cost and timestamp of a purchase
+GET http://localhost:8080/api/users/{userId}/orders/{orderId}
+
+### Get the most widely used tag of a user with the highest cost of all orders
+GET http://localhost:8080/api/users/{userId}/tags/most
+
+### Search for gift certificates by several tags (AND condition)
+GET http://localhost:8080/api/certificates?tags=tag1,tag2,tag3
+
+### Pagination for GET endpoints
+GET http://localhost:8080/api/certificates?page=1&size=10&sort=name
+
+
+### Create a new tag
+POST http://localhost:8080/api/tags
+Content-Type: application/json
+
+{
+  "name": "winter"
+}
+
+### Get a tag by ID
+GET http://localhost:8080/api/tags/{tagId}
+
+### Update a tag
+PUT http://localhost:8080/api/tags/{tagId}
+Content-Type: application/json
+
+{
+  "name": "summer"
+}
+
+### Delete a tag
+DELETE http://localhost:8080/api/tags/{tagId}
+
+### Create a new order for a user
+POST http://localhost:8080/api/users/{userId}/orders
+Content-Type: application/json
+
+{
+  "certificateId": "{certificateId}",
+  "quantity": 1
+}
+
+
+
+### Get an order by ID for a user
+GET http://localhost:8080/api/users/{userId}/orders/{orderId}
+
+### Get all orders for a user
+GET http://localhost:8080/api/users/{userId}/orders
+
+### Get a user by ID
+GET http://localhost:8080/api/users/{userId}
+
+
+###
+GET http://localhost:8080/api/tags
+
+###
+POST http://localhost:8080/tags
+
+###
+GET http://localhost:8080/tags/{{id}}
+
+###
+DELETE http://localhost:8080/tags/{{id}}
+
+###
+GET http://localhost:8080/certificates
+
+###
+POST http://localhost:8080/certificates
+
+###
+GET http://localhost:8080/certificates/
+
+###
+GET http://localhost:8080/certificates/{{id}}
+
+###
+PATCH http://localhost:8080/certificates/{{id}}
+
+###
+DELETE http://localhost:8080/certificates/{{id}}
+
+###
+GET http://localhost:8080/certificates/{{id}}/tags
+
+###
+GET http://localhost:8080/api/certificates
+
+###
+POST http://localhost:8080/api/certificates
+
+###
+GET http://localhost:8080/api/certificates/
+
+###
+GET http://localhost:8080/api/certificates/{{id}}
+
+###
+PATCH http://localhost:8080/api/certificates/{{id}}
+
+###
+DELETE http://localhost:8080/api/certificates/{{id}}
+
+###
+GET http://localhost:8080/api/certificates/{{id}}/tags
+
+###
+GET http://localhost:8080/api/tags
+
+###
+POST http://localhost:8080/api/tags
+
+###
+GET http://localhost:8080/api/tags/{{id}}
+
+###
+DELETE http://localhost:8080/api/tags/{{id}}
+
+###
+GET http://localhost:8080/api/users
+
+###
+GET http://localhost:8080/api/users/{{id}}
+
+###
+GET http://localhost:8080/api/users/{{id}}/certificates
+
+###
+GET http://localhost:8080/api/orders/
+
+###
+GET http://localhost:8080/api/orders/certificates/{{id}}
+
+###
+GET http://localhost:8080/api/orders/{{id}}
+
+###
+GET http://localhost:8080/api/orders/{{userId}}
+
+###
+POST http://localhost:8080/api/orders/{{userId}}
+
+###
+GET http://localhost:8080/api/certificates
+
+###
+POST http://localhost:8080/api/certificates
+
+###
+GET http://localhost:8080/api/certificates/
+
+###
+GET http://localhost:8080/api/certificates/{{ids}}
+
+###
+GET http://localhost:8080/api/certificates/{{id}}
+
+###
+PATCH http://localhost:8080/api/certificates/{{id}}
+
+###
+DELETE http://localhost:8080/api/certificates/{{id}}
+
+###
+GET http://localhost:8080/api/certificates/{{id}}/tags
+
+###
+GET http://localhost:8080/api/tags
+
+###
+POST http://localhost:8080/api/tags
+
+###
+GET http://localhost:8080/api/tags/{{id}}
+
+###
+DELETE http://localhost:8080/api/tags/{{id}}
+
+###
+GET http://localhost:8080/api/users
+
+###
+GET http://localhost:8080/api/users/{{id}}
+
+###
+GET http://localhost:8080/api/users/{{id}}/certificates
+
+###
+GET http://localhost:8080/api/orders/
+
+###
+GET http://localhost:8080/api/orders/users/{{userId}}
+
+###
+GET http://localhost:8080/api/orders/{{id}}
+
+###
+POST http://localhost:8080/api/orders/{{userId}}
+
+###
+GET http://localhost:8080/api/certificates
+
+###
+POST http://localhost:8080/api/certificates
+
+###
+GET http://localhost:8080/api/certificates/
+
+###
+PATCH http://localhost:8080/api/certificates/
+
+###
+GET http://localhost:8080/api/certificates/orders/{{ids}}
+
+###
+GET http://localhost:8080/api/certificates/users/{{id}}
+
+###
+GET http://localhost:8080/api/certificates/{{id}}
+
+###
+DELETE http://localhost:8080/api/certificates/{{id}}
+
+###
+GET http://localhost:8080/api/certificates/{{id}}/tags
+
+###
+GET http://localhost:8080/api/tags
+
+###
+POST http://localhost:8080/api/tags
+
+###
+GET http://localhost:8080/api/tags/{{id}}
+
+###
+DELETE http://localhost:8080/api/tags/{{id}}
+
+###
+GET http://localhost:8080/api/users
+
+###
+GET http://localhost:8080/api/users/{{id}}
+
+###
+GET http://localhost:8080/api/orders
+
+###
+GET http://localhost:8080/api/orders/users/{{userId}}
+
+###
+GET http://localhost:8080/api/orders/{{id}}
+
+###
+POST http://localhost:8080/api/orders/{{userId}}
+
+###
+GET http://localhost:8080/api/users
+
+###
+GET http://localhost:8080/api/users/{{id}}
+
+###
+GET http://localhost:8080/api/tags
+
+###
+POST http://localhost:8080/api/tags
+
+###
+GET http://localhost:8080/api/tags/{{id}}
+
+###
+DELETE http://localhost:8080/api/tags/{{id}}
+
+###
+GET http://localhost:8080/api/orders
+
+###
+GET http://localhost:8080/api/orders/users/{{userId}}
+
+###
+GET http://localhost:8080/api/orders/{{id}}
+
+###
+POST http://localhost:8080/api/orders/{{userId}}
+
+###
+GET http://localhost:8080/api/certificates
+
+###
+POST http://localhost:8080/api/certificates
+
+###
+PATCH http://localhost:8080/api/certificates
+
+###
+GET http://localhost:8080/api/certificates/
+
+###
+GET http://localhost:8080/api/certificates/orders/{{ids}}
+
+###
+GET http://localhost:8080/api/certificates/users/{{id}}
+
+###
+GET http://localhost:8080/api/certificates/{{id}}
+
+###
+DELETE http://localhost:8080/api/certificates/{{id}}
+
+###
+GET http://localhost:8080/api/certificates/{{id}}/tags
+
+###
+GET http://localhost:8080/api/users
+
+###
+GET http://localhost:8080/api/users/{{id}}
+
+###
+GET http://localhost:8080/api/tags
+
+###
+POST http://localhost:8080/api/tags
+
+###
+GET http://localhost:8080/api/tags/{{id}}
+
+###
+DELETE http://localhost:8080/api/tags/{{id}}
+
+###
+GET http://localhost:8080/api/orders
+
+###
+GET http://localhost:8080/api/orders/users/{{userId}}
+
+###
+GET http://localhost:8080/api/orders/{{id}}
+
+###
+POST http://localhost:8080/api/orders/{{userId}}
+
+###
+GET http://localhost:8080/api/certificates
+
+###
+POST http://localhost:8080/api/certificates
+
+###
+PATCH http://localhost:8080/api/certificates
+
+###
+GET http://localhost:8080/api/certificates/
+
+###
+GET http://localhost:8080/api/certificates/orders/{{ids}}
+
+###
+GET http://localhost:8080/api/certificates/users/{{id}}
+
+###
+GET http://localhost:8080/api/certificates/{{id}}
+
+###
+DELETE http://localhost:8080/api/certificates/{{id}}
+
+###
+GET http://localhost:8080/api/certificates/{{id}}/tags
+
+###
+GET http://127.0.0.1:8080/api/users
+
+###
+GET http://127.0.0.1:8080/api/users/{{id}}
+
+###
+GET http://127.0.0.1:8080/api/tags
+
+###
+POST http://127.0.0.1:8080/api/tags
+
+###
+GET http://127.0.0.1:8080/api/tags/{{id}}
+
+###
+DELETE http://127.0.0.1:8080/api/tags/{{id}}
+
+###
+GET http://127.0.0.1:8080/api/orders
+
+###
+GET http://127.0.0.1:8080/api/orders/users/{{userId}}
+
+###
+GET http://127.0.0.1:8080/api/orders/{{id}}
+
+###
+POST http://127.0.0.1:8080/api/orders/{{userId}}
+
+###
+GET http://127.0.0.1:8080/api/certificates
+
+###
+POST http://127.0.0.1:8080/api/certificates
+
+###
+GET http://127.0.0.1:8080/api/certificates/
+
+###
+GET http://127.0.0.1:8080/api/certificates/orders/{{ids}}
+
+###
+GET http://127.0.0.1:8080/api/certificates/users/{{id}}
+
+###
+GET http://127.0.0.1:8080/api/certificates/{{id}}
+
+###
+PATCH http://127.0.0.1:8080/api/certificates/{{id}}
+
+###
+DELETE http://127.0.0.1:8080/api/certificates/{{id}}
+
+###
+GET http://127.0.0.1:8080/api/certificates/{{id}}/tags

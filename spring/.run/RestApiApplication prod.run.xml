@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RestApiApplication prod" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ACTIVE_PROFILES" value="prod" />
+    <module name="web-app" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.store.gift.RestApiApplication" />
+    <option name="VM_PARAMETERS" value="-Dspring.datasource.username=admin -Dspring.datasource.password=KuvTJNHx6eapfdIpX03nFOZwjvVHA0nN" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.store.gift.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

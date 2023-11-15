@@ -1,0 +1,180 @@
+### Successful test: check response status is 200
+GET  http://localhost:8080/api/certificates/search
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+### Failed test: check response status is 200
+GET  http://localhost:8080/api/certificates/search
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+### Check response status and content-type
+GET http://localhost:8080/api/certificates
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+
+client.test("Response content-type is json", function() {
+  var type = response.contentType.mimeType;
+  client.assert(type === "application/json", "Expected 'application/json' but received '" + type + "'");
+});
+%}
+
+### certificates POST request with json body
+POST http://localhost:8080/api/certificates/
+Content-Type: application/json
+Host: http://localhost:8080
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "spa Gift Certificate",
+  "description": "A day of our spa!",
+  "price": 100.00,
+  "duration": 120
+}
+
+### tags POST request with json body
+POST http://localhost:8080/api/tags/
+Content-Type: application/json
+
+{
+  "name": "Salon"
+}
+
+### PATCH certificates request with json body
+PATCH http://localhost:8080/api/certificates/1
+Content-Type: application/json
+
+{
+  "name": "Spring",
+  "duration": 50
+}
+
+### POST request to add a new tag
+POST http://localhost:8080/api/tags/
+Content-Type: application/json
+
+{
+  "name": "Salon"
+}
+
+### POST request to add a specific tag by ID value
+POST http://localhost:8080/api/certificates/
+Content-Type: application/json
+
+{
+  "name": "Spa Gift Certificate",
+  "description": "A day of our spa!",
+  "price": 100.00,
+  "duration": 120,
+  "tags": [
+    {
+      "id": 1,
+      "name": "Salon"
+    }
+  ]
+}
+
+### GET request to retrieve all tags
+GET http://localhost:8080/api/tags/
+
+### GET request to retrieve a specific tag by ID value
+GET http://localhost:8080/api/tags/1
+
+### DELETE request to delete a specific tag by ID value
+DELETE http://localhost:8080/api/tags/1
+
+### GET request to retrieve all certificates
+GET http://localhost:8080/api/certificates/
+
+### POST request to add a new certificate
+POST http://localhost:8080/api/certificates/
+Content-Type: application/json
+
+{
+  "name": "day Spa Gift Certificate",
+  "description": "A day of our spa!",
+  "price": 100.00,
+  "duration": 120
+}
+
+### PATCH request to update a specific certificate by ID value
+PATCH http://localhost:8080/api/certificates/1
+Content-Type: application/json
+
+{
+  "name": "Spring",
+  "duration": 50
+}
+
+### GET request to search for certificates by name
+GET http://localhost:8080/api/certificates/search?name=Spa Gift Certificate
+
+### GET request to retrieve a specific certificate by ID value
+GET http://localhost:8080/api/certificates/1
+
+### DELETE request to delete a specific certificate by ID value
+DELETE http://localhost:8080/api/certificates/1
+
+### GET tags
+GET http://localhost:8080/tags
+
+### POST tag
+POST http://localhost:8080/tags
+Content-Type: application/json
+
+{
+  "name": "Salon"
+}
+
+### GET tag by ID with API prefix
+GET http://localhost:8080/api/tags/1
+
+### DELETE tag by ID with API prefix
+DELETE http://localhost:8080/api/tags/1
+
+### GET certificates
+GET http://localhost:8080/api/certificates
+
+### POST certificate
+POST http://localhost:8080/api/certificates
+Content-Type: application/json
+
+{
+  "name": "spa Gift Certificate",
+  "description": "A day of our spa!",
+  "price": 100.00,
+  "duration": 120
+}
+
+### PATCH certificate
+PATCH http://localhost:8080/api/certificates/1
+Content-Type: application/json
+
+{
+  "name": "Spring",
+  "duration": 50
+}
+
+### GET certificates with search
+GET http://localhost:8080/api/certificates/search
+
+### GET certificate by ID
+GET http://localhost:8080/api/certificates/1
+
+### DELETE certificate by ID
+DELETE http://localhost:8080/api/certificates/1
+
+### GET certificates with search by name
+GET http://localhost:8080/api/certificates/search?name=Spa Gift Certificate

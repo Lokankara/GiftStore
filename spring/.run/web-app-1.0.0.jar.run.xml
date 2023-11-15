@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="web-app-1.0.0.jar" type="JarApplication">
+    <option name="JAR_PATH" value="$PROJECT_DIR$/web-app/target/web-app-1.0.0.jar" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2" />
+  </configuration>
+</component>

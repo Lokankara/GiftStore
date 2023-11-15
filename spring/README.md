@@ -1,5 +1,7 @@
-# External Lab
+[![Java CI with Maven](https://github.com/Lokankara/GiftStore/actions/workflows/maven.yml/badge.svg)](https://github.com/Lokankara/GiftStore/actions/workflows/maven.yml)
+
 ## REST API:
+
 #### Web service for Gift Certificates system
 
 #### Commands:

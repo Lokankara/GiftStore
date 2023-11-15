@@ -1,0 +1,25 @@
+<div class="dropdown">
+  <button class="drop-button"
+          (click)="toggleDropdown(dropdownSearch.classList)">
+    <span id="drop-header">{{category}}</span>
+    <span
+      class="material-symbols-search material-symbols-outlined">expand_more</span>
+  </button>
+  <div id="dropdown-search" class="dropdown-content" #dropdownSearch>
+    <div class="search-icon">
+      <span
+        class="material-symbols-search material-symbols-outlined">search</span>
+      <input
+        id="input-search"
+        type="text"
+        placeholder="Search..."
+        (keydown.enter)="onCategoryClick(dropdownSearch.classList, inputSearch.value)"
+        #inputSearch
+      />
+    </div>
+    <ng-container *ngFor="let categoryName of categoryNames">
+      <a (click)="onCategoryClick(dropdownSearch.classList, categoryName)"
+         [attr.data-category]="categoryName">{{ categoryName }}</a>
+    </ng-container>
+  </div>
+</div>

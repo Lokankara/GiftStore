@@ -1,0 +1,8 @@
+<div class="spinner-container"
+     [ngClass]="{ 'visible': isVisible }"
+     (click)="SpinnerService.toggle()">
+  <div class="spinner"
+       [ngClass]="{ 'visible': isVisible }"
+       id="loading-indicator"></div>
+</div>
+

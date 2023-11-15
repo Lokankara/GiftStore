@@ -1,0 +1,10 @@
+<button class="button-back submit_btn" type="reset"
+        [disabled]='false'
+        (click)="backClick()">
+  <span class="button-label">{{ prev }}</span>
+</button>
+<button type="submit" class="button-save submit_btn"
+        [disabled]="disable"
+        (click)="sendClick()">
+  <span class="button-label">{{ next }}</span>
+</button>

@@ -1,0 +1,19 @@
+<div class="exchange"
+     *appExchangeRates="let rate from rates$ autoplay mode
+     interval ms; controller as ctrl;">
+
+  <div class="material-symbols-outlined arrow-left"
+       appHidden
+       (click)="ctrl.prev()">
+    arrow_left
+  </div>
+  <div class="exchange-price"
+       (click)="ctrl.next()">
+    <img [ngSrc]="rate.src" alt="" [width]="40" [height]="30"/>
+  </div>
+  <div class="material-symbols-outlined arrow-right"
+       appHidden
+       (click)="ctrl.next()">
+    arrow_right
+  </div>
+</div>

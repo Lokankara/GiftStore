@@ -1,0 +1,9 @@
+<app-category></app-category>
+<div id="certificates-list"
+     *ngIf="certificates$ as certificates;">
+    <app-card
+            class="certificate-card"
+            *ngFor="let certificate of certificates"
+            [certificate]="certificate">
+    </app-card>
+</div>

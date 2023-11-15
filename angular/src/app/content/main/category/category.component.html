@@ -1,0 +1,22 @@
+<div class="categories-nav"
+     *appCarousel="let tag from tags$"
+     (mouseenter)="pre.showIcon(); post.showIcon();"
+     (mouseleave)="pre.hideIcon(); post.hideIcon();">
+  <span class="material-symbols-outlined arrows arrow-left"
+        (click)="prev()" appHidden #pre="hiddenControl">arrow_left</span>
+  <div class="category-card"
+       *ngFor="let category of tags$">
+    <div class="category" (click)="search(category.name)">
+      <app-image
+        [src]="category.url"
+        [width]="200"
+        [height]="150">
+      </app-image>
+      <div class="overlay"></div>
+      <span class="text">{{ category.name }}</span>
+    </div>
+  </div>
+  <span class="material-symbols-outlined arrows arrow-right"
+        (click)="next()" appHidden #post="hiddenControl">arrow_right
+  </span>
+</div>

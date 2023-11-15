@@ -1,0 +1,16 @@
+<div class="modal-frame"
+     [ngClass]="{'active': isOpen, 'leave': !isOpen}"
+     (click)="close()">
+  <div class="modal-body">
+    <button id="close" class="close">
+        <span class="material-symbols-outlined">
+          close
+        </span>
+    </button>
+    <div class="modal-inner">
+      <div id="message" class="message" #modalContent>
+      </div>
+    </div>
+  </div>
+  <div class="modal-overlay"></div>
+</div>

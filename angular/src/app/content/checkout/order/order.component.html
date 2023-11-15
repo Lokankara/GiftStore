@@ -1,0 +1,38 @@
+<app-image
+  class="image-small"
+  [src]="coupon.path"
+  [width]="108"
+  [height]="108">
+</app-image>
+<article>
+  <h3 class="coupon-name">{{ coupon.name }}</h3>
+  <p class="coupon-desc">{{ coupon.description }}</p>
+</article>
+<div class="coupon-total">
+  <div class="quantity">
+  <span
+    class="material-symbols-outlined"
+    (click)="increment.emit()">
+    arrow_drop_up
+</span>
+    <div>
+      {{ coupon.count }}
+    </div>
+    <span
+      class="material-symbols-outlined"
+      (click)="decrement.emit()">
+    arrow_drop_down
+  </span>
+  </div>
+  <div
+    class="coupon-price"
+    *ngIf="rates && rates[index]">
+    {{ coupon.price | exchange: rates[index].value
+    | currency:rates[index].currency: 'symbol-narrow' }}
+  </div>
+  <span
+    class="material-symbols-outlined coupon-remove"
+    (click)="remove.emit()">
+    delete
+</span>
+</div>

@@ -1,0 +1,61 @@
+@import '../../../assets/css/variables';
+
+.wrapper {
+  margin-top: 15vh;
+  flex-direction: column;
+  @include center-justify-content(flex-start);
+}
+
+.title {
+  padding: 25px;
+  box-sizing: border-box;
+  background-color: #bdbdbd;
+  @include box($register-wrapper, 72px);
+  @include font-color(22px, $white-color);
+}
+
+.registration_form {
+  padding: 0 25px;
+  box-sizing: border-box;
+  width: $register-wrapper;
+  background-color: #fafafa;
+}
+
+.form_wrap {
+  margin-top: 15px;
+}
+
+.form_wrap .input_wrap {
+  margin-bottom: 15px;
+}
+
+.form_wrap .input_wrap label {
+  display: block;
+  margin-bottom: 3px;
+  color: $gray-color;
+}
+
+.form_wrap .input_grp {
+  @include flex-justify(space-between);
+}
+
+.form_wrap .input_grp input[type="text"],
+.form_wrap .input_grp input[type="email"],
+.form_wrap .input_grp input[type="password"] {
+  width: calc((#{$register-wrapper} / 2) - 60px);
+}
+
+.form_wrap input[type="text"],
+.form_wrap input[type="email"],
+.form_wrap input[type="password"] {
+  width: 100%;
+  border-radius: 3px;
+  padding: 10px;
+  outline: none;
+}
+
+.form_wrap input[type="text"]:focus,
+.form_wrap input[type="email"]:focus,
+.form_wrap input[type="password"]:focus {
+  border-color: $gainsboro-color;
+}

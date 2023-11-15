@@ -1,0 +1,73 @@
+@import '../../../assets/css/variables';
+
+.details-wrapper {
+  padding-left: 25vw;
+  padding-top: 30px;
+}
+
+.details-group {
+  display: flex;
+}
+
+.price {
+  font-weight: 700;
+  @include box(75px, 23px);
+  @include font-color(21px, $black-color);
+}
+
+.image {
+  margin-bottom: 20px;
+  background: #e0e0e0;
+  @include box(auto, 600px);
+}
+
+.description {
+  position: absolute;
+  @include box(50vw, 126px);
+  @include font-height-color(16px, 21px, $desc-color);
+}
+
+.more-description {
+  margin-left: 30px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  width: 320px;
+  min-height: 600px;
+  background-color: $white-color;
+  @include font-height-color(17px, 22px, $desc-color);
+}
+
+.item-title {
+  @include box(314px, 32px);
+  @include font-color(22px, $black-color);
+}
+
+.time-left {
+  margin-top: 20px;
+  @include font-color(13px, #868686);
+}
+
+.more-description p {
+  @include font-color(16px, $desc-color);
+}
+
+.time {
+  @include font-color(17px, $black-color);
+}
+
+.cart {
+  margin-top: 30px;
+  flex-direction: row;
+  @include center-justify-content(space-between);
+}
+
+.add-to-cart {
+  text-align: right;
+  @include center-content();
+  @include font-color(17px, $link-color);
+}
+
+.add-icon {
+  margin-left: 5px;
+  @include font-color(24px, $icon-color);
+}

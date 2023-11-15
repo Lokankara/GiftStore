@@ -1,0 +1,17 @@
+<div class="details-wrapper">
+  <div class="details-group">
+    <app-image
+      [src]="certificate.path"
+      [routerLink]="['/checkout']"
+      [width]="600"
+      [height]="600">
+    </app-image>
+    <app-info [certificate]="certificate"></app-info>
+  </div>
+  <div class="item-title">
+    Item Detailed Description
+  </div>
+  <div class="description"
+       [innerHTML]="certificate.description">
+  </div>
+</div>

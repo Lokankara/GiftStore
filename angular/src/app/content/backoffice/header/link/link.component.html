@@ -1,0 +1,20 @@
+<div class="user">
+  <a [routerLink]="link.a.href"
+     [id]="link.a.id"
+     [class]="link.a.class"
+  >
+    {{ link.a.text }}
+  </a>
+  <span
+    *ngIf="link.span && link.span.id === 'favorite-count' && favoriteCounter > 0"
+    [id]="link.span.id"
+    [class]="link.span.class">
+    {{ link.span.text }} {{ favoriteCounter }}
+  </span>
+  <span
+    *ngIf="link.span && link.span.id === 'cart-count' && cardCounter > 0"
+    [id]="link.span.id"
+    [class]="link.span.class">
+    {{ link.span.text }} {{ cardCounter }}
+  </span>
+</div>

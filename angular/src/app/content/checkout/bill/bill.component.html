@@ -1,0 +1,27 @@
+<table>
+  <thead>
+  <tr>
+    <th style="width: 10%;"><label>Invoice</label></th>
+    <th style="width: 10%;">Due Date</th>
+    <th style="width: 50%;">Certificates</th>
+    <th style="width: 10%;"><label>Amount</label></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let invoice of orders">
+    <td data-label="Invoice">{{ invoice.id }}</td>
+    <td data-label="Due Date">{{ invoice.orderDate | date: 'longDate' }}</td>
+    <td data-label="Certificates">
+      <ul>
+        <li *ngFor="let certificate of invoice.certificateDtos">
+          {{ certificate.name }}
+        </li>
+      </ul>
+    </td>
+    <td data-label="Amount" *ngIf="rates && rates[index]">
+      {{ invoice.cost | exchange: rates[index].value | currency:
+      rates[index].currency: 'symbol-narrow' }}
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,59 @@
+@import '../../../../assets/css/variables';
+
+.coupon-total {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.quantity {
+  padding-left: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-small {
+  margin-right: 20px;
+  background: #e0e0e0;
+  @include box(108px, 108px);
+}
+
+.coupon-remove {
+  color: $gray-color;
+  margin-left: 10px;
+}
+
+.coupon-remove:hover {
+  color: crimson;
+}
+
+.coupon-desc {
+  color: $gray-color;
+}
+
+.coupon-price {
+  margin-left: 15px;
+}
+
+.button-back {
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 12px;
+  background: #ffffff;
+  width: 200px;
+  height: 43px;
+  border: 1px solid #dedede;
+}
+
+.button-back .button-label {
+  font-weight: 700;
+  color: #808080;
+  font-size: 17px;
+}
+
+.button-save .button-label {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 17px;
+}

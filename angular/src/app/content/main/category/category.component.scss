@@ -1,0 +1,95 @@
+@import '../../../../assets/css/variables';
+
+.arrows {
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  color: $icon-color;
+  background: $silver-color;
+  &:hover {
+    background: $light-gray-color;
+    transition: transform 0.5s ease, background 0.5s ease;
+  }
+}
+
+.categories-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  background-color: $gainsboro-color;
+  @include box(100%, 140px);
+  @include center-justify-content(center);
+}
+
+.category-card {
+  margin: 0 50px;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+.category {
+  transition: all ease 1s;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  margin: auto;
+  width: 150px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover .overlay {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover span {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.5s ease, opacity 0.3s ease;
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    margin: auto;
+    width: 0;
+    height: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+  }
+
+  span {
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    margin: auto;
+    line-height: 30px;
+    width: 80px;
+    font-size: 14px;
+    padding: 0 auto;
+    border-radius: 3px;
+    background-color: black;
+    height: 30px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s ease, opacity 0.7s ease;
+  }
+}

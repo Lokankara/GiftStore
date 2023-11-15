@@ -1,0 +1,15 @@
+<div class="user">
+  <app-exchange></app-exchange>
+  <span [routerLink]="['/login']"
+        *ngIf="service.isLoggedIn()">
+    |&nbsp;<a class="login" id="user-span">
+      {{service.getUsername()}}</a>
+    |&nbsp;
+  </span>
+  <ng-container
+    *ngFor="let link of userLinks">
+    <app-user-link
+      [link]="link">
+    </app-user-link>
+  </ng-container>
+</div>

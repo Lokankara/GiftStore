@@ -1,0 +1,12 @@
+<div class="search-container">
+  <input
+    #searchField
+    type="text"
+    id="categories-input"
+    class="categories-input"
+    placeholder="Search by item name"
+    (input)="onInputChange(searchField.value) "
+    (keydown.enter)="onInputChange(searchField.value)"
+  />
+  <app-nav-dropdown></app-nav-dropdown>
+</div>

@@ -1,0 +1,67 @@
+button {
+  border: none;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.submit_btn {
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 3px;
+  box-sizing: border-box;
+  width: 200px;
+  height: 42px;
+  background: #6fcf97;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.submit_btn:disabled,
+.submit_btn:hover:disabled {
+  color: #ffffff;
+  background-color: #c4c4c4;
+  border: 1px solid #c4c4c4;
+}
+
+
+.submit_btn:hover {
+  transition-delay: 0s;
+  transform: translateZ(10px) scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.submit_btn:not(:hover) {
+  transition-delay: 0.3s, 0.1s;
+}
+
+.button-save {
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 12px;
+  width: 200px;
+  height: 43px;
+  background: #6fcf97;
+}
+
+.button-back {
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 12px;
+  background: #ffffff;
+  width: 200px;
+  height: 43px;
+  border: 1px solid #dedede;
+}
+
+.button-back .button-label {
+  font-weight: 700;
+  color: #808080;
+  font-size: 17px;
+}
+
+.button-save .button-label {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 17px;
+}

@@ -1,0 +1,7 @@
+<div class="certificate-group">
+  <h2 class="certificate-name">{{ certificate.name }}</h2>
+  <span class="material-symbols-outlined certificate-icon"
+        (click)="addToFavorite()">
+     {{ certificate.favorite ? 'heart_plus' : 'favorite' }}
+  </span>
+</div>

@@ -1,0 +1,14 @@
+@import '../../../../../../assets/css/variables';
+
+.certificate-description {
+  @include flex-justify(space-between);
+  width: 125px;
+  margin-bottom: 5px;
+  @include multi-row();
+  @include font-color(11px, $black-color);
+}
+
+.expires {
+  height: 24px;
+  @include font-color(9px, $icon-color);
+}

@@ -1,0 +1,39 @@
+@import '../../../../../assets/css/variables';
+
+.login {
+  margin-right: 3px;
+  @include font-color(17px, $icon-color);
+}
+
+.signup {
+  margin-right: 20px;
+  @include font-color(17px, $icon-color);
+}
+
+.shop-icon {
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 100%;
+  @include font-color(20px, $icon-color);
+}
+
+.shop-icon:hover {
+  background: $gray-color;
+  color: $white-color;
+  transition: 0.3s;
+}
+
+.counter {
+  font-size: 11px;
+  background-color: $counter-color;
+  color: white;
+  border-radius: 50%;
+  padding: 2px;
+  width: 13px;
+  text-align: center;
+  margin-left: 15px;
+  margin-top: -23px;
+  height: 11px;
+  position: absolute;
+  font-family: Roboto, sans-serif;
+}

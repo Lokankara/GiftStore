@@ -1,0 +1,119 @@
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+}
+
+table tr {
+  background-color: #fff;
+  border: 1px solid #e1e5e9;
+  border-radius: 3px;
+}
+
+table thead tr:first-child {
+  border: 1px solid #62b1bd;
+}
+
+table th,
+table td {
+  text-align: center;
+  font-size: 14px;
+  padding: 5px;
+}
+
+table td:nth-child(4) {
+  font-size: 18px;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: #62b1bd;
+  color: #FFF;
+  padding: 5px;
+}
+
+table tbody tr td .btn-invoice {
+  background: #62b1bd;
+  color: #FFF;
+  font-size: 13px;
+  padding: 10px 20px;
+  border: 0;
+  font-family: cursive;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    padding: 0;
+  }
+  table tr {
+    border-bottom: 3px solid #e1e5e9;
+    display: block;
+  }
+
+  table th,
+  table td {
+    padding: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #e1e5e9;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+    color: #9da9b9;
+  }
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #656971;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+  table td:nth-child(4) {
+    font-size: 0.8em;
+  }
+}

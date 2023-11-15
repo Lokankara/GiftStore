@@ -1,0 +1,21 @@
+@import '../../../../../../assets/css/variables';
+
+.certificate-icon {
+  z-index: 5;
+  margin-right: 10px;
+  color: $icon-color;
+  cursor: pointer;
+  @include box(13px, 13px);
+}
+
+h2 {
+  width: 180px;
+  min-height: 40px;
+  font-family: $card-font;
+  @include multi-row();
+  @include font-height-color(17px, 21px, $black-color);
+}
+
+.certificate-name {
+  justify-content: space-between;
+}

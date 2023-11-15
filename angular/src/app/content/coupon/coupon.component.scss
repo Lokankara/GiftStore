@@ -1,0 +1,95 @@
+@import '../../../assets/css/variables';
+
+#new-coupon{
+  flex-direction: column;
+  @include center-justify-content(flex-start);
+}
+
+.input-item-name,
+.input-company,
+.input-image,
+.select-category,
+.input-price,
+.input-expired-date,
+.input-desc {
+  margin-left: 10px;
+  margin-top: 3px;
+  background: #ffffff;
+  box-sizing: border-box;
+  @include box(420px, 50px);
+  border: 1px solid #dedede;
+}
+
+.input-desc {
+  @include box(420px, 135px);
+  box-sizing: border-box;
+}
+
+.add-new-wrapper {
+  @include center-justify-content(center);
+}
+
+.add-new-title {
+  padding-top: 25px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  height: 72px;
+  background-color: #bdbdbd;
+  font-size: 22px;
+  @include box(880px, 72px);
+  @include font-color(22px, $white-color);
+}
+
+.row-grp {
+  @include flex-direction(column);
+  justify-content: flex-start;
+}
+
+.column {
+  padding-right: 10px;
+  padding-bottom: 10px;
+  background-color: $white-color;
+  @include flex-direction(row);
+}
+
+.input-label {
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-category,
+.custom-file-upload {
+  margin: 10px;
+  cursor: pointer;
+  padding: 13px 10px;
+  box-sizing: border-box;
+  @include box(420px, 50px);
+  border: 1px solid #dedede;
+  background-color: $white-color;
+}
+
+.custom-category span,
+.custom-file-upload span {
+  float: right;
+  color: $icon-color;
+  background-color: $white-color;
+}
+
+.input-prefix {
+  width: 27px;
+  cursor: pointer;
+  margin-top: 33px;
+  margin-left: 390px;
+  position: absolute;
+  color: $icon-color;
+  background-color: $white-color;
+}
+
+.date-input {
+  position: relative;
+}

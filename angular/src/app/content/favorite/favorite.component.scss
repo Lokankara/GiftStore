@@ -1,0 +1,17 @@
+@import '../../../assets/css/variables';
+
+#certificates-list {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8% 5% 8%;
+}
+
+.certificate-card {
+  cursor: pointer;
+  width: 248px;
+  margin: 20px;
+  position: relative;
+  background-color: $white-color;
+  @include flex-direction(column);
+}

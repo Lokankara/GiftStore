@@ -1,0 +1,186 @@
+@import '../../../../../assets/css/variables';
+
+.logo {
+  @include center-justify-content(space-between);
+}
+
+.logo-name {
+  width: 145px;
+  margin-left: 86px;
+  height: 66px;
+  transition: opacity 0.3s ease-in;
+  background: url("../../../../../assets/images/name.svg") no-repeat center center;
+
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes drawPath {
+  0% {
+    stroke-dashoffset: 200;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+#animatedGroup {
+  animation: fadeIn 2s linear 1s forwards;
+}
+
+#animatedGroup path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawPath 2s linear forwards;
+}
+
+.logo-label {
+  position: absolute;
+  z-index: 15;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  margin-left: 56px;
+  border-radius: 20px;
+  margin-top: -61px;
+  justify-content: center;
+  transition: transform 0.2s ease-out;
+  background: url("../../../../../assets/images/logo2.svg") no-repeat center center;
+  @include font-height-color(24px, 29px, $black-color);
+}
+
+.menu-open {
+  display: none;
+}
+
+.menu {
+  position: absolute;
+  left: 60px;
+  padding-top: 20px;
+  height: 50px;
+  box-sizing: border-box;
+  font-size: 20px;
+  text-align: left;
+}
+
+.menu-item {
+  @extend %nav-icon;
+  top: 18px;
+
+  &:hover {
+    background: $gray-color;
+    color: $white-color;
+    z-index: 12;
+    border-radius: 15px;
+
+  }
+
+  @for $i from 1 through $menu-items {
+    &:nth-child(#{$i + 2}) {
+      transition-duration: 180ms;
+    }
+  }
+}
+
+.symbol-item {
+  text-decoration: none;
+  background: $white-color;
+  z-index: 10;
+  transition: transform 0.3s ease;
+  @extend %nav-icon;
+
+  &:hover {
+    background: none;
+    color: $white-color;
+    border-radius: 75px;
+  }
+}
+
+.menu-open-button {
+  @extend %nav-icon;
+  z-index: 2;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 400ms;
+  cursor: pointer;
+}
+
+.menu-open:checked ~ .menu-item {
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  @for $i from 1 through $menu-items {
+    &:nth-child(#{$i + 2}) {
+      transition-duration: 90ms + (100ms * $i);
+      transform: translate3d($distance * $i, 0, 0);
+    }
+  }
+}
+
+.menu-button {
+  width: 40px;
+  height: 40px;
+  left: 9px;
+  top: 16px;
+  border-radius: 100%;
+  position: absolute;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menu-button:hover {
+  background-color: $light-gray-color;
+  transition-delay: 0.3s;
+}
+
+.menu-open:checked ~ #logo-name {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hamburger {
+  box-sizing: content-box;
+  $width: 30px;
+  $height: 3px;
+  width: $width;
+  height: $height;
+  background: $icon-color;
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-left: calc(-#{$width} / 2 - 50px);
+  margin-top: calc(-#{$height} / 2);
+  transition: transform 200ms;
+  pointer-events: none;
+}
+
+.hamburger-1 {
+  transform: translate3d(0, -$hamburger-spacing, 0);
+}
+
+.hamburger-2 {
+  transform: translate3d(0, 0, 0);
+}
+
+.hamburger-3 {
+  transform: translate3d(0, $hamburger-spacing, 0);
+}
+
+.menu-open:checked + .menu-open-button {
+  .hamburger-1 {
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+
+  .hamburger-2 {
+    transform: translate3d(0, 0, 0) scale(0.1, 1);
+  }
+
+  .hamburger-3 {
+    transform: translate3d(0, 0, 0) rotate(-45deg);
+  }
+}

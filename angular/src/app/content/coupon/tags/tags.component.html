@@ -1,0 +1,20 @@
+<!--<div class="colors">-->
+<!--  <ul>-->
+<!--    <li *ngFor="let color of colors"-->
+<!--        [style.background-color]="color"-->
+<!--        (click)="changeColor(color)"></li>-->
+<!--  </ul>-->
+<!--</div>-->
+
+<div id="hash-tags">
+  <span class="hash-tag" *ngFor="let tag of tags"
+        [style.background-color]="selectedColor">
+    <span class="close"
+          (click)="removeTag(tag)">&times;
+    </span>{{ tag }}
+  </span>
+  <input id="hash-tag-typer" type="text"
+         placeholder="Add tag..."
+         (keydown.enter)="addTag()"
+         [(ngModel)]="newTag"/>
+</div>

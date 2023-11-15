@@ -1,0 +1,18 @@
+<div class="medium-image">
+  <app-image
+    [src]="certificate.path"
+    [routerLink]="['/product', certificate.id, 'details']"
+    [width]="300"
+    [height]="300">
+  </app-image>
+</div>
+<app-name
+  [certificate]="certificate">
+</app-name>
+<app-description
+  [description]="certificate.description"
+  [duration]="certificate.duration">
+</app-description>
+<app-price
+  [certificate]="certificate">
+</app-price>

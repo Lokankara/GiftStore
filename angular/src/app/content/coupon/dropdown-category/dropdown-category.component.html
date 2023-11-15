@@ -1,0 +1,34 @@
+<div class="checkbox-dropdown"
+     [ngClass]="{'open': isOpen, '': !isOpen}"
+     (click)="toggleOpen()">
+  <div class="select-category">
+    <div class="options"
+         (click)="$event.stopPropagation()">
+      <div class="tag-input">
+        <span class="material-symbols-outlined icon-add"
+        (click)="addTag()"
+        >add</span>
+        <input class="new-category" pattern="^[A-Za-z]+$"
+          [(ngModel)]="newTag" placeholder="New category"
+          (keydown.enter)="$event.preventDefault(); addTag()"
+        >
+      </div>
+        <label
+          class="tags-box"
+          *ngFor="let tagControl of getControls(tagsForm,'tags') as controls;
+        let i = index">
+        <span
+          class="material-symbols-outlined icon-input"
+          *ngIf="controls.length > 6"
+          (click)="removeTag(i)">
+          delete
+        </span>
+          <input
+            type="checkbox"
+            (change)="toggleTag(tagControl.value)"
+            [checked]="internalValue.includes(tagControl.value)">
+          {{tagControl.value}}
+        </label>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+@import '../../../../assets/css/variables';
+
+#certificates-list {
+  flex-wrap: wrap;
+  @include flex-justify(space-between);
+  padding: 0 8% 5% 8%;
+}
+
+.certificate-card {
+  cursor: pointer;
+  width: 248px;
+  margin: 20px;
+  position: relative;
+  background-color: $white-color;
+  @include flex-direction(column);
+}
+
+.viewport {
+  height: 75vh;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+}

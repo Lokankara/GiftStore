@@ -1,0 +1,24 @@
+<div class="menu-button" (click)="toggleCheckbox()"></div>
+<nav class="menu">
+  <input id="menu-open" type="checkbox" name="menu-open" class="menu-open"
+         #menuOpenCheckbox/>
+  <label for="menu-open" class="menu-open-button">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+  <div *ngFor="let item of menuItems" class="menu-item">
+    <a
+      [href]=""
+      [routerLink]="[item.href]"
+      class="material-symbols-outlined symbol-item">
+      {{ item.name }}
+    </a>
+  </div>
+</nav>
+<div
+  class="logo-name" id="logo-name"
+  [style.opacity]="menuOpenCheckbox.checked ? 0 : 1"
+  #logoName>
+</div>
+<a href="#" class="logo-label" id="logo-label" #logoLabel></a>

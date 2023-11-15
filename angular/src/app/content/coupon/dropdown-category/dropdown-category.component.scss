@@ -1,0 +1,53 @@
+.new-category{
+  padding: 7px;
+  margin-bottom: 7px;
+}
+
+.icon-add{
+  position: relative;
+  top: 10px;
+  font-size: 29px;
+  color: grey;
+}
+
+.icon-add:hover{
+  color: green;
+}
+
+.icon-input{
+  font-size: 20px;
+  top: 3px;
+  color: grey;
+  position: relative;
+}
+
+.icon-input:hover{
+  color: red;
+}
+
+#new-coupon {
+  padding: 20px;
+}
+
+.options {
+  display: none;
+  position: absolute;
+  background: #ffffff;
+  box-sizing: border-box;
+  width: 420px;
+  height: 320px;
+  border: 1px solid #dedede;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.tags-box {
+  padding: 5px;
+  height: 35px;
+  display: block;
+  cursor: pointer;
+}
+
+.checkbox-dropdown.open .options {
+  display: block;
+}

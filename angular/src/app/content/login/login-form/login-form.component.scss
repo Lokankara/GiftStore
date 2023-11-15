@@ -1,0 +1,110 @@
+@import '../../../../assets/css/variables';
+
+.st1{fill:#234789;}
+.st2{fill:#62BC47;}
+
+#submit-button:disabled,
+.login-button:hover:disabled {
+  color: $white-color;
+  background-color: $logo-gray-color;
+  border: 1px solid $logo-gray-color;
+}
+
+.main-wrapper {
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background: $white-color;
+  border: 1px solid #c9c9c9;
+  @include box($logo-width, $logo-height);
+}
+
+.circle {
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #c4c4c4;
+  @include box(220px, 220px);
+  transform: scale(.9) translate(60%, -55%);
+  //background: url("../../../../assets/images/name2.svg") no-repeat center center, white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+svg{
+  transform: scale(1.5) translate(25%, 30%);
+}
+
+@keyframes drawPath{
+  0% {
+    stroke-dashoffset: 200;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 300;
+  animation: drawPath .3s ease-in forwards .1s;
+}
+
+.logo-avatar {
+  font-weight: 700;
+  transform: translate(20%, 100%);
+  @include font-color(59px, $white-color);
+  background: $white-color;
+}
+
+.logo-button {
+  @include box(342px, 50px);
+  transition: transform 0.5s ease-out, box-shadow 0.5s ease-out,
+  background-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+.login-button:hover {
+  background-color: $secondary-hover-color;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.logo-button:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.signup-button {
+  transform: translate(13%, -175%);
+  background: $white-color;
+  border: 1px solid $light-gray-color;
+}
+
+.password-button {
+  transform: translate(13%, -150%);
+  background: $white-color;
+  border: 1px solid $light-gray-color;
+}
+
+.login-button {
+  box-sizing: content-box;
+  transform: translate(13%, -125%);
+  background: $secondary-color;
+  border: 1px solid $secondary-color;
+  font-family: $card-font;
+  color: $white-color;
+}
+
+.login-label {
+  @include box(64px, 33px);
+  @include font-color(21px, $white-color);
+}
+
+.signup-button::placeholder,
+.password-button::placeholder {
+  text-align: center;
+  @include font-color(21px, $gray-color);
+}
+
+.signup-button,
+.password-button {
+  padding-left: 10px;
+}

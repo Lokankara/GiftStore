@@ -1,0 +1,52 @@
+svg:hover {
+  width: 70%;
+  height: 70%;
+  transition: 0.5s ease-out width;
+}
+
+svg {
+  width: 50%;
+  color: black;
+  pointer-events: none;
+}
+
+.scroll-top:hover {
+  transform: scale(1);
+}
+
+.scroll-top.show {
+  opacity: 1;
+  display: flex;
+}
+
+.scroll-top {
+  position: fixed;
+  height: 60px;
+  width: 60px;
+  background-color: white;
+  bottom: 40px;
+  right: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.336);
+  transform: scale(0.9);
+  align-items: center;
+  justify-content: center;
+  transition: .3s ease-in-out transform;
+}
+
+@keyframes drawPath{
+  0% {
+    stroke-dashoffset: 200;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+#path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 300;
+  animation: drawPath .3s ease-in forwards .1s;
+}

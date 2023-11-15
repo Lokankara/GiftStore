@@ -1,0 +1,13 @@
+<div class="certificate-group">
+  <p class="price" *ngIf="rates && rates[index]">
+    {{ certificate.price | exchange: rates[index].value
+    | currency: rates[index].currency: 'symbol-narrow'}}
+  </p>
+  <button
+    (click)="addToCart()"
+    [class]="certificate.checkout
+    ? 'add-button heart_plus'
+    : 'add-button favorite'">
+    <p class="add-to-cart-text">Add to Cart</p>
+  </button>
+</div>

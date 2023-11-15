@@ -1,0 +1,94 @@
+@import '../../../../../assets/css/variables';
+
+span{
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  width: 180px;
+  position: relative;
+  display: inline-block;
+}
+
+#drop-header {
+  float: left;
+}
+
+.drop-button {
+  background-color: $secondary-color;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  @include box(182px, 52px);
+}
+
+.drop-button:hover,
+.drop-button:focus {
+  background-color: $secondary-hover-color;
+}
+
+.drop-button:hover .material-symbols-outlined {
+  transform: rotateZ(180deg);
+  transition: transform 0.3s ease;
+}
+
+.dropdown-content a {
+  box-sizing: border-box;
+  width: 180px;
+  color: $black-color;
+  padding: 12px 0 10px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+#input-search {
+  box-sizing: border-box;
+  background-color: transparent;
+  font-size: 16px;
+  padding: 14px 0 10px 10px;
+  border: none;
+  border-bottom: 1px solid $light-gray-color;
+  width: 178px;
+}
+
+.search-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.material-symbols-search {
+  position: absolute;
+  top: 27%;
+  right: 14px;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+#input-search:focus {
+  outline: 3px solid $light-gray-color;
+}
+
+.dropdown-content {
+  z-index: 6;
+  width: 180px;
+  display: none;
+  position: absolute;
+  background-color: $silver-color;
+  border: 1px solid $light-gray-color;
+}
+
+.dropdown-content a:hover {
+  width: 180px;
+  background-color: $gainsboro-color;
+}
+
+.show {
+  display: block;
+}

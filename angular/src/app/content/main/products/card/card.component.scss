@@ -1,0 +1,14 @@
+@import '../../../../../assets/css/variables';
+
+.medium-image {
+  margin-bottom: 5px;
+  background: $light-gray-color;
+  overflow: hidden;
+  @include box(248px, 200px);
+}
+
+.certificate-group {
+  margin-bottom: 10px;
+  padding: 0 10px;
+  @include flex-justify(space-between);
+}

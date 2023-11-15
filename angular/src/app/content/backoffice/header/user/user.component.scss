@@ -1,0 +1,28 @@
+#user-span {
+  font-size: 17px;
+  font-weight: 700;
+  color: #757575;
+  text-transform:capitalize;
+}
+
+.user {
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.user a{
+  padding: 2px;
+}
+
+.user a:hover{
+  padding: 2px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  color: #757575;
+}
+
+#splitter:hover {
+  padding: 2px;
+  background-color: #fff;
+}

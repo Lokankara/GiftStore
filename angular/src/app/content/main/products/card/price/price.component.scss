@@ -1,0 +1,43 @@
+@import '../../../../../../assets/css/variables';
+
+.price {
+  @include font-color(18px, $black-color);
+}
+
+.certificate-price {
+  justify-content: space-between;
+}
+
+.add-button {
+  cursor: pointer;
+  box-sizing: border-box;
+  background: $white-color;
+  border: 1px solid $black-color;
+  @include box(104px, 25px);
+  @include center-justify-content(center);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.add-button:hover {
+  @include hover();
+  border: 0;
+}
+
+.add-button:not(:hover) {
+  @include un-hover();
+}
+
+.heart_plus {
+  background: $secondary-color;
+  color: $white-color;
+  border: 0;
+}
+
+.favorite {
+  background: $white-color;
+  color: $black-color;
+}
+
+.add-label {
+  @include font-height-color(11px, 13px, $black-color);
+}

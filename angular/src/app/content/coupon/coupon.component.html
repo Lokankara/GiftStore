@@ -1,0 +1,94 @@
+<form id="new-coupon" enctype="multipart/form-data"
+      [formGroup]="form"
+      (ngSubmit)="saveCertificate()">
+  <div class="add-new-title">
+    New Coupon
+  </div>
+  <div id="add-new-wrapper"
+       class="add-new-wrapper">
+    <div class="column">
+      <div class="row-grp">
+        <label class="input-label" for="company">
+          Company</label>
+        <input
+          formControlName="company"
+          type="text" id="company"
+          class="input-company validate"
+          autocomplete="on">
+        <label class="input-label">
+          <span class="material-symbols-outlined input-prefix">
+            expand_more</span>
+          Category</label>
+
+        <app-dropdown-category
+          [tagsForm]="form">
+        </app-dropdown-category>
+
+        <label class="input-label" for="expired-date">
+          <span class="material-symbols-outlined input-prefix">
+            event</span>
+          Valid to</label>
+        <input
+          formControlName="expired"
+          type="date" id="expired-date"
+          class="input-expired-date validate"
+          value="2024-02-24"
+          autocomplete="on">
+        <label class="input-label" for="price">
+          Price</label>
+        <input
+          formControlName="price"
+          type="number" id="price"
+          class="input-price validate"
+          autocomplete="on">
+          <label class="input-label" for="images">
+            Images
+          </label>
+          <label class="custom-file-upload">
+            <input
+              formControlName="file"
+              id="images"
+              type="file"
+              accept="images/*"
+              (change)="onFileChange($event)">
+            <span class="material-symbols-outlined">
+              photo_library
+            </span>
+          </label>
+      </div>
+
+      <div class="row-grp">
+        <label class="input-label" for="item-name">
+          Item Name</label>
+        <input
+          formControlName="name"
+          type="text" id="item-name"
+          class="input-item-name validate"
+          autocomplete="on">
+        <label class="input-label" for="long-desc">
+          Long Description</label>
+        <textarea
+          formControlName="description"
+          id="long-desc"
+          class="input-desc validate"
+          autocomplete="on">
+        </textarea>
+        <label class="input-label" for="short-desc">
+          Short Description</label>
+        <textarea
+          formControlName="shortDescription"
+          id="short-desc"
+          class="input-desc validate">
+        </textarea>
+        <div class="confirm">
+          <app-buttons
+            [prev]="'Back'" [next]="'Save'"
+            (prevClick)="service.goBack()">
+          </app-buttons>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-tags></app-tags>
+</form>
+<!--[disable]="form.invalid || form.pending"-->

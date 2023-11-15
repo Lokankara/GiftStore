@@ -1,0 +1,20 @@
+<hr class="divider">
+<div class="checkout-confirm">
+  <div class="checkout-grp">
+    <div class="coupon-total-price">Total</div>
+    <div class="coupon-total-price"
+         *ngIf="rates && rates[index]">
+      {{ total | exchange: rates[index].value | currency:
+      rates[index].currency: 'symbol-narrow' }}
+    </div>
+  </div>
+  <div class="checkout-grp">
+    <div class="confirm">
+      <app-buttons
+        [prev]="'Back'" [next]="'Checkout'"
+        (nextClick)="service.sendOrders(total)"
+        (prevClick)="service.back()">
+      </app-buttons>
+    </div>
+  </div>
+</div>

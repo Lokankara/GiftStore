@@ -1,0 +1,7 @@
+@import '../../../../assets/css/variables';
+
+.header {
+  background: $white-color;
+  @include box(100%, 75px);
+  @include center-justify-content(space-between);
+}
